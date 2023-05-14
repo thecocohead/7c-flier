@@ -22,10 +22,13 @@
  */
 
 //other files used
+require 'src/eventClass.php';
 require 'src/callAPI.php';
 require 'src/settings.php';
 require 'src/jsonSelect.php';
 require 'src/getFutureEvents.php';
-
+require 'src/createEventArray.php';
 //dev requests
+$res = getFutureEvents($baseUrl, $timeZone);
+$arr = createEventArray($res);
 ?>
