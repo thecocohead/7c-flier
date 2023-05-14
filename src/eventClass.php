@@ -15,21 +15,21 @@ class Event {
     }
     //getters
     public function getID() {
-        return $id;
+        return $this->id;
     }
     public function getImage() {
-        return $image;
+        return $this->image;
     }
     public function getStartDate() {
-        return $startDate;
+        return $this->startDate;
     }
 
     //functions
     public function publishChanges($username, $password, $endPoint) {
         $newData = [
-            "image" => $image
+            "image" => $this->image
         ];
-        callAPI("POST", $endPoint/$id, $newData, $username, $password);
+        callAPI("POST", $endPoint . "/" . $this->id, $newData, $username, $password);
     }
 }
 ?>

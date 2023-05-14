@@ -23,12 +23,19 @@
 
 //other files used
 require 'src/eventClass.php';
+require 'src/flierClass.php';
 require 'src/callAPI.php';
 require 'src/settings.php';
 require 'src/jsonSelect.php';
 require 'src/getFutureEvents.php';
 require 'src/createEventArray.php';
+require 'src/listFiles.php';
+require 'src/arrCmp.php';
+require 'src/allPublish.php';
 //dev requests
-$res = getFutureEvents($baseUrl, $timeZone);
-$arr = createEventArray($res);
+$events = getFutureEvents($baseUrl, $timeZone);
+$eventArr = createEventArray($events);
+$flierArr = listFiles($gDriveKey, $gDriveFolder, $gDriveEndpt);
+arrCmp($eventArr, $flierArr);
+allPublish($eventArr, $username, $password, $baseUrl . "events");
 ?>
