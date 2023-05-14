@@ -22,8 +22,10 @@
  */
 
 //other files used
-require 'callAPI.php';
+require 'src/callAPI.php';
+require 'src/settings.php';
+require 'src/jsonSelect.php';
+require 'src/getFutureEvents.php';
 
-$res = callAPI("GET", "url");
-echo $res;
+//dev requests
 ?>

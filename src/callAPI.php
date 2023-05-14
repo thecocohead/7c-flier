@@ -1,10 +1,10 @@
 <?php
-function CallAPI($method, $url, $data = false) {
+function callAPI($method, $url, $data = false) {
     //init
     $curl = curl_init($url);
 
     //opts
-
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
     //exec
     $result = curl_exec($curl);
 
